@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title></title>
+</head>
+<body>
+   <h1>v-text & v-html</h1>
+   <hr>
+   <div id="app">
+      <span>{{message}}</span>=<span v-text="message"></span><br/>
+      <span v-html="msgHtml"></span>
+   </div>
+
+   <script type="text/javascript">
+   var app = new Vue({
+       el: '#app',
+       data: {
+          message:'hello world!',
+          msgHtml:'<h2>hello world!</h2>'
+       }
+   })
+   </script>
+</body>
+</html>
