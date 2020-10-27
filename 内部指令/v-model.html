@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>v-model</title>
+</head>
+
+<body>
+    <h1>v-model</h1>
+    <hr>
+    <div id="app">
+        <p>原始文本信息:{{message}}</p>
+        <h3>文本框</h3>
+        <p>v-model:<input type="text" v-model="message" /></p>
+        <p>v-model.lazy:<input type="text" v-model.lazy="message" /></p>
+        <p>v-model.number:<input type="text" v-model.number="message" /></p>
+        <p>v-model.trim:<input type="text" v-model.trim="message" /></p>
+        <hr>
+        <h3>文本域</h3>
+        <textarea cols="30" rows="10" v-model="message"></textarea>
+        <hr>
+        <h3>多选框绑定一个值</h3>
+        <input type="checkbox" id="isTrue" v-model="isTrue">
+        <label for="isTrue">{{isTrue}}</label>
+        <hr>
+        <h3>多选框绑定数组</h3>
+        <p>
+            <input type="checkbox" id="jspang" value="jspang" v-model="web_names">
+            <label for="jspang">jspang</label>
+            <input type="checkbox" id="Panda" value="Panda" v-model="web_names">
+            <label for="Panda">Panda</label>
+            <input type="checkbox" id="panpan" value="panpan" v-model="web_names">
+            <label for="panpan">panpan</label>
+        </p>
+        <p>{{web_names}}</p>
+        <hr>
+        <h3>单选框绑定</h3>
+        <p>
+           <input type="radio" id="one" value="男" v-model="sex">
+           <label for="one">男</label>
+           <input type="radio" id="two" value="女" v-model="sex">
+           <label for="two">女</label>
+        </p>
+        <p>你选择的性别是：{{sex}}</p>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello world!',
+                isTrue: true,
+                web_names: [],
+                sex: '男'
+            }
+        })
+    </script>
+</body>
+
+</html>
