@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <title>vue.set 全局操作</title>
+</head>
+
+<body>
+    <h1>vue.set 全局操作</h1>
+    <hr>
+    <div id="app">
+        {{count}}
+        <ul>
+            <li v-for="item in arr">{{item}}</li>
+        </ul>
+    </div>
+    <p><button onclick="add()">add</button></p>
+
+    <script type="text/javascript">
+        function add() {
+            //1.用Vue.set改变
+            // Vue.set(outData,'count',4); 
+
+            //2.用Vue对象的方法添加
+            // app.count++;
+
+            //3.直接操作外部数据
+            outData.count++;
+
+            Vue.set(app.arr,1,'ddd');
+        }
+
+
+        //在构造器外部声明数据
+        var outData = {
+            count: 1,
+            goodName: 'car',
+            arr: ['aaa','bbb','ccc']
+        }
+
+        var app = new Vue({
+            el: '#app',
+            data: outData  //引用外部数据
+        })
+
+
+        //由于Javascript的限制，Vue不能自动检测以下变动的数组。
+        //1.当你利用索引直接设置一个项时，vue不会为我们自动更新。
+        //2.当你修改数组的长度时，vue不会为我们自动更新。
+
+    </script>
+</body>
+
+</html>
