@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    {{$route.params.username}}-{{$route.params.id}}
   </div>
 </template>
 
