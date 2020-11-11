@@ -1,4 +1,4 @@
-# y
+# vuex
 
 > A Vue.js project
 
